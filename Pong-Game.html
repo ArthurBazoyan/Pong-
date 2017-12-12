@@ -121,7 +121,7 @@ myAudio.play();
         x: boardw / 2,
         y: boardh / 2,
         r: 15,
-        xDelta : 5,
+        xDelta : 10,
         yDelta : 5,
         color : 'white'
         }
@@ -148,7 +148,7 @@ var random = 0;
           x: boardw / 2,
           y: boardh / 2,
           r: 15,
-          xDelta : 5,
+          xDelta : 10,
           yDelta : rand(10),
           color : 'white'
           
@@ -162,7 +162,7 @@ var random = 0;
           x: boardw / 2,
           y: boardh / 2,
           r: 15,
-          xDelta : -5,
+          xDelta : -10,
           yDelta : rand(10),
           color : 'white'
           
@@ -179,7 +179,7 @@ var random = 0;
             ball.yDelta = -ball.yDelta;
           }
           if (RectCircleIntersection(gameData.player1.x, gameData.player1.y, gameData.player1.width, gameData.player1.height, ball.x, ball.y, ball.r)) {
-            ball.xDelta = Math.abs(ball.xDelta -1);
+            ball.xDelta = Math.abs(ball.xDelta);
             if(keyPressed[w]) {
               ball.yDelta = -Math.abs(ball.yDelta);
             } else if(keyPressed[s]) {
@@ -187,12 +187,13 @@ var random = 0;
             }
           }
           if (RectCircleIntersection(gameData.player2.x, gameData.player2.y, gameData.player2.width, gameData.player2.height, ball.x, ball.y, ball.r)) {
-            ball.xDelta = -1 * Math.abs(ball.xDelta +1);
+            ball.xDelta = -1 * Math.abs(ball.xDelta);
             if(keyPressed[downKey]) {
               ball.yDelta = Math.abs(ball.yDelta);
             } else if(keyPressed[upKey]) {
-              ball.yDelta = -Math.abs(ball.yDelta );
+              ball.yDelta = -Math.abs(ball.yDelta);
             }
+
           }
 
           ball.x = ball.x + ball.xDelta;
@@ -229,7 +230,7 @@ var random = 0;
             ball.yDelta = -ball.yDelta;
           }
           if (RectCircleIntersection(gameData.player1.x, gameData.player1.y, gameData.player1.width, gameData.player1.height, ball.x, ball.y, ball.r)) {
-            ball.xDelta = Math.abs(ball.xDelta -1);
+            ball.xDelta = Math.abs(ball.xDelta);
             if(keyPressed[w]) {
               ball.yDelta = -Math.abs(ball.yDelta);
             } else if(keyPressed[s]) {
@@ -237,7 +238,7 @@ var random = 0;
             }
           }
           if (RectCircleIntersection(gameData.player2.x, gameData.player2.y, gameData.player2.width, gameData.player2.height, ball.x, ball.y, ball.r)) {
-            ball.xDelta = -1 * Math.abs(ball.xDelta +1);
+            ball.xDelta = -1 * Math.abs(ball.xDelta);
             if(keyPressed[downKey]) {
               ball.yDelta = Math.abs(ball.yDelta);
             } else if(keyPressed[upKey]) {
@@ -282,22 +283,22 @@ var random = 0;
         canvasboard.clearRect(0, 0, boardw, boardh);
 
         canvasbackground.fillStyle = 'white';
-          canvasbackground.font = "100px Comic Sans MS";
-          canvasbackground.fillText(player1score , 500 , 150 );
-          canvasbackground.fillText(player2score , 1315 , 150 );
+        canvasbackground.font = "100px Comic Sans MS";
+        canvasbackground.fillText(player1score , 500 , 150 );
+        canvasbackground.fillText(player2score , 1315 , 150 );
 
-          canvasbackground.fillStyle = 'white';
-          canvasbackground.font = "30px Comic Sans MS";
-          canvasbackground.fillText('Press Spacebar To Add Balls', 20 , 40 );
-          canvasbackground.fillText('Press M To Remove Balls', 20 , 80 );
-          canvasbackground.fillText('Press G For Multiplayer Mode', 20 , 120 );
-          canvasbackground.fillText('Press F For One Player Mode', 20 , 160 );
-          canvasbackground.fillText('Press R To Reset The Scores', 20 , 200 );
-                    
-          canvasbackground.fillStyle = 'white';
-          canvasbackground.font = "45px Comic Sans MS";
-          canvasbackground.fillText('Ball count:', 1315 , 840 );
-          canvasbackground.fillText( ballcount, 1550 , 840 );
+        canvasbackground.fillStyle = 'white';
+        canvasbackground.font = "30px Comic Sans MS";
+        canvasbackground.fillText('Press Spacebar To Add Balls', 20 , 40 );
+        canvasbackground.fillText('Press M To Remove Balls', 20 , 80 );
+        canvasbackground.fillText('Press G For Multiplayer Mode', 20 , 120 );
+        canvasbackground.fillText('Press F For One Player Mode', 20 , 160 );
+        canvasbackground.fillText('Press R To Reset The Scores', 20 , 200 );
+                            
+        canvasbackground.fillStyle = 'white';
+        canvasbackground.font = "45px Comic Sans MS";
+        canvasbackground.fillText('Ball count:', 1315 , 840 );
+        canvasbackground.fillText( ballcount, 1550 , 840 );
 
           
         
